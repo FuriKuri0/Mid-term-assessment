@@ -1,7 +1,12 @@
-import React from 'react'
+import 'antd/dist/antd.min.css'
+import React from 'react';
+import Head from './component/head';
 
 export default function App() {
     return (
-        <div>App...</div>
+        <div>
+            <Head />
+        </div>
     )
 }
+
