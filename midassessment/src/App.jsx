@@ -1,12 +1,18 @@
-// import 'antd/dist/antd.min.css'
-import React from 'react'
 // 引入Home组件
-import Home from './pages/Home/index'
+import 'antd/dist/antd.min.css'
+import React from 'react';
+import { useRoutes } from 'react-router-dom'
+import routes from './routes'
+import Head from './component/head';
+
 
 export default function App() {
+    const element = useRoutes(routes)
     return (
         <div>
-            <Home/>
+            <Head />
+            {element}
         </div>
     )
 }
+

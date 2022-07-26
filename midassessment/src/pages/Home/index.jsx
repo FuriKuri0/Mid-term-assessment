@@ -1,42 +1,31 @@
 import { SearchOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.min.css'
 import { Button} from 'antd';
-import React,{useState} from 'react'
-import routes from '../../routes';
-import { NavLink ,useRoutes } from 'react-router-dom';
+import React,{Component} from 'react'
+import { NavLink ,Outlet } from 'react-router-dom';
 
-export default function Home() {
-  const element = useRoutes(routes)
-  //根据路由表生成对应的路由规则
-  const [messages] = useState([
-		{id:'001',title:'all',content:'全部'},
-		{id:'002',title:'infoManage',content:'信息管理'},
-		{id:'003',title:'rdDesign',content:'研发设计'},
-		{id:'004',title:'productControl',content:'生产控制'},
-    {id:'005',title:'firmware',content:'嵌入式软件'},
-	])
-  return (
-    <div className="home">
-      <div className="home-subnav">
-        <ul className="home-subnav-left">
-          {
-            messages.map((m)=>{
-              return (
-                // {/* 路由链接 */}
-                <li key={m.id}>
-                  <NavLink title={m.title} to="/Contents">{m.content}</NavLink>
-                </li>
-              )
-            })
-          }
-        </ul>
-        <div className="home-subnav-right">
-          <input type="text" placeholder='搜索'/>
-          <Button shape="circle" icon={<SearchOutlined />} />
+export default class Home extends Component {
+
+  render(){
+  
+    return (
+      <div className="home">
+        <div className="home-subnav">
+          <ul className="home-subnav-left">
+              <li key='001'><NavLink to='Contents/all'>全部</NavLink></li>
+              <li key='002'><NavLink to='Contents/infoMange'>信息管理</NavLink></li>
+              <li key='003'><NavLink to='Contents/rdDesign'>研发设计</NavLink></li>
+              <li key='004'><NavLink to='Contents/productControl'>生产控制</NavLink></li>
+              <li key='005'><NavLink to='Contents/firmware'>嵌入式软件</NavLink></li>
+          </ul>
+          <div className="home-subnav-right">
+            <input type="text" placeholder='搜索'/>
+            <Button shape="circle" icon={<SearchOutlined />} />
+          </div>
         </div>
+        {/* 注册路由 */}
+        <Outlet/>
       </div>
-      {/* 注册路由 */}
-      {element}
-    </div>
-  )
+    )
+  }
 }

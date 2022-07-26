@@ -5,7 +5,7 @@ export default function Contents() {
     return (
       // 主页内容部分
       <div className="home-content">
-          <div className="home-content-head">信息管理</div>
+          <div className="home-content-head"></div>
           <div className="home-content-body">
             <a href="">
               <div className="home-info">
