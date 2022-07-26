@@ -56,7 +56,7 @@ const Emaill = () => {
                 <Button type="primary" htmlType="submit" className="login-form-button">
                     Log in
                 </Button>
-                Or <a href="javascript">register now!</a>
+                Or
             </Form.Item>
         </Form>
     );

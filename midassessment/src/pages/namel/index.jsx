@@ -1,11 +1,9 @@
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input, Alert } from 'antd';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import './index.css'
 import axios from 'axios'
 const Namel = () => {
-    const navigate = useNavigate();
     const [error, setError] = React.useState(0);
     const onFinish = (values) => {
         axios({
@@ -23,13 +21,6 @@ const Namel = () => {
         )
         // console.log('Received values of form: ', values);
     };
-    const back = () => {
-        navigate('/dlzc', {
-            state: {
-                a: 313
-            }
-        })
-    }
     return (
 
         <div>
@@ -49,7 +40,7 @@ const Namel = () => {
                             message: 'Please input your Username!',
                         },
                         {
-                            pattern: /[\w\u4e00-\u9fa5]{6,12}$/,
+                            pattern: "^[\\u4e00-\\u9fa5a-zA-Z0-9]{6,12}$",
                             message: '用户名必须为6-12位字母/数字/中文'
                         }
                     ]}
@@ -64,8 +55,8 @@ const Namel = () => {
                             message: 'Please input your Password!',
                         },
                         {
-                            pattern: /^(\w){6,20}$/,
-                            message: '密码必须为6-20个字母、数字、下划线'
+                            pattern: "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$",
+                            message: '密码必须为6-20个字母、数字'
 
                         }
                     ]}
@@ -90,10 +81,11 @@ const Namel = () => {
                     <Button type="primary" htmlType="submit" className="login-form-button">
                         Log in
                     </Button>
-                    Or <a href="javascript:;" onClick={back}>register now!</a>
+                    Or
                 </Form.Item>
             </Form>
             <div>{error ? <Alert message="账号不存在或密码错误！" type="error" showIcon /> : ''}</div>
+
         </div>
 
     );
