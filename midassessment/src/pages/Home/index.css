@@ -87,7 +87,7 @@ body {
 /* 子导航栏 */
 .home-subnav {
     position: absolute;
-    top: 82px;
+    top: 0px;
     left: 50%;
     width: 1290px;
     height: 80px;
@@ -146,7 +146,7 @@ body {
 /* 内容栏 */
 .home-content {
     position: absolute;
-    top: 220px;
+    top:138px;
     left: 50%;
     width: 1290px;
     transform: translate(-50%,0);
