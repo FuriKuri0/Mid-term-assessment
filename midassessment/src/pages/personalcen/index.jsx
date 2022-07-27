@@ -15,7 +15,7 @@ import React from 'react'; function getItem(label, key, icon, children, type) {
 const items = [
     getItem(<Link to='mysoftware'>我的软件</Link>, 'sub1', <MailOutlined />),
     getItem(<Link to='myauthorization'>我的授权</Link>, 'sub2', <AppstoreOutlined />),
-    getItem(<Link to='accountinf'>账户信息</Link>, 'sub4', <SettingOutlined />, [
+    getItem('账户信息', 'sub4', <SettingOutlined />, [
         getItem(<Link to='personalinf'>个人信息</Link>, 'personalinf'),
         getItem(<Link to='fingerprint'>指纹管理</Link>, 'fingerprint'),
     ]),

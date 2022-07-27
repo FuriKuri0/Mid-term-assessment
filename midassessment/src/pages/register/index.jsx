@@ -29,11 +29,24 @@ export default function Register() {
   const onFinish = (values) => {
     const { username, password, email, phone_number } = values;
     axios({
+      headers: {
+        'Content-Type': 'application/json'
+      },
       method: 'POST',
-      url: 'http://39.98.41.126:31104/users/register',
+      url: 'http://106.13.18.48/users/register',
       data: JSON.stringify({ username, password, email, phone_number })
     }).then(
-      response => { alert('注册成功！'); console.log(response); back(); },
+      response => {
+        const { data } = response;
+        if (data.code === 60101) {
+          alert('注册成功！');
+          back();
+        }
+        else {
+          alert(data.msg);
+        }
+        console.log(response);
+      },
     )
     console.log('Received values of form: ', values);
   };

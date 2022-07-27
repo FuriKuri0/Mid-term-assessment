@@ -7,14 +7,26 @@ const Namel = () => {
     const [error, setError] = React.useState(0);
     const onFinish = (values) => {
         axios({
+            headers: {
+                'Content-Type': 'application/json'
+            },
             method: 'POST',
-            url: 'http://39.98.41.126:31104/users',
+            url: 'http://106.13.18.48/users',
             data: JSON.stringify({
                 username: values.username,
                 password: values.password
             })
         }).then(
-            response => { alert('登陆成功'); console.log(response); },
+            response => {
+                const { data } = response;
+                if (data.code === 60001) {
+                    alert('注册成功！');
+                    console.log(response);
+                }
+                else {
+                    alert(data.msg);
+                }
+            },
             error => {
                 setError(1)
             }
@@ -84,7 +96,8 @@ const Namel = () => {
                     Or
                 </Form.Item>
             </Form>
-            <div>{error ? <Alert message="账号不存在或密码错误！" type="error" showIcon /> : ''}</div>
+            <div>{error ? <Alert closable
+                className='namel-alert' message="连接服务器失败！" type="error" showIcon /> : ''}</div>
 
         </div>
 

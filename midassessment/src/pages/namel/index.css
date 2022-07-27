@@ -18,3 +18,11 @@
  .login-form-button {
      width: 100%;
  }
+
+ .namel-alert {
+     position: absolute;
+     left: 576px;
+     top: 100px;
+     height: 54px;
+     width: 434px;
+ }
