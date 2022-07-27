@@ -29,9 +29,9 @@
 
 .dlzc-box {
     position: absolute;
-    width: 418px;
+    width: 430px;
     height: 450px;
-    top: 25%;
+    bottom: 18%;
     left: 65%;
 
 
@@ -50,7 +50,7 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1.5em;
     line-height: 24px;
     letter-spacing: 0.035em;
 
@@ -103,7 +103,7 @@
 
 .dlzc-registerBtn {
     position: absolute;
-    top: 70.2%;
+    bottom: 25%;
     left: 71%;
     background-color: rgba(0, 0, 0, 0);
     color: rgb(4, 62, 234);
