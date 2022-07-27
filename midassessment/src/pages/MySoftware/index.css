@@ -116,6 +116,10 @@ body {
 }
 
 .mySoftware-content-body .mySoftware-info:hover {
+    cursor: pointer;
+}
+
+.mySoftware-content-body .mySoftware-info:hover {
     box-shadow: 5px 5px 5px rgba(0,0,0,.06);
 }
 

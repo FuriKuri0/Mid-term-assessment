@@ -8,7 +8,7 @@ const { Header } = Layout;
 const items1 = [
     { key: 1, label: <Link to='/home'>产品</Link> },
     { key: 2, label: <Link to='/white'>购买授权</Link> },
-    { key: 3, label: <Link to='/MySoftware'><UserOutlined style={{ fontSize: '20px' }} /></Link> }
+    { key: 3, label: <Link to='/mysoftware'><UserOutlined style={{ fontSize: '20px' }} /></Link> }
 ];
 
 export default function Head() {
